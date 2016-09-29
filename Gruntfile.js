@@ -59,7 +59,7 @@ module.exports = function (grunt) {
         }
       }
     }
-  });
+  })
 
   grunt.config.requires('watch.server.files')
   files = grunt.config('watch.server.files')
@@ -75,8 +75,8 @@ module.exports = function (grunt) {
           } else {
             grunt.log.error('Unable to make a delayed live reload.');
           }
-          done(reloaded);
-        });
+          done(reloaded)
+        })
     }, 500)
   })
 
@@ -84,5 +84,5 @@ module.exports = function (grunt) {
     'less',
     'develop',
     'watch'
-  ]);
-};
+  ])
+}

@@ -11,7 +11,7 @@
 8 verbose lifecycle qr-scanner@0.0.1~start: unsafe-perm in lifecycle true
 9 verbose lifecycle qr-scanner@0.0.1~start: PATH: /Users/gancho/.node_modules/lib/node_modules/npm/bin/node-gyp-bin:/Users/gancho/workspace/trancemotion/qr-scanner/node_modules/.bin:/Applications/XAMPP/bin:/Users/gancho/.node_modules/bin:/Users/gancho/.node/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/gancho/.composer/vendor/bin
 10 verbose lifecycle qr-scanner@0.0.1~start: CWD: /Users/gancho/workspace/trancemotion/qr-scanner
-11 silly lifecycle qr-scanner@0.0.1~start: Args: [ '-c', 'node ./bin/www' ]
+11 silly lifecycle qr-scanner@0.0.1~start: Args: [ '-c', 'node ./www.js' ]
 12 verbose stack Error: spawn E2BIG
 12 verbose stack     at exports._errnoException (util.js:1026:11)
 12 verbose stack     at ChildProcess.spawn (internal/child_process.js:313:11)
