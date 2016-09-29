@@ -8,9 +8,8 @@
     "postinstall": "bash ./post_install.sh"
   },
   "engines": {
-    "node": "6.5.0",
-    "npm":"3.10.8"
-  }
+    "node": "6.5.0"
+  },
   "dependencies": {
     "express": "^4.13.3",
     "serve-favicon": "^2.3.0",
