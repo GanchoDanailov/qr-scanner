@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start": "grunt",
     "postinstall": "bash ./post_install.sh"
   },
+  "engines": {
+    "node": "6.5.0",
+    "npm":"3.10.8"
+  }
   "dependencies": {
     "express": "^4.13.3",
     "serve-favicon": "^2.3.0",
