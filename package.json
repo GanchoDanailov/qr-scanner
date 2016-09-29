@@ -2,9 +2,8 @@
   "name": "qr-scanner",
   "version": "0.0.1",
   "private": true,
-  "main": "www.js",
   "scripts": {
-    "start": "node ./www.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "express": "^4.13.3",
