@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
-var request = require('request');
+var request = require('request')
 
 module.exports = function (grunt) {
   // show elapsed time at the end
-  require('time-grunt')(grunt);
+  require('time-grunt')(grunt)
   // load all grunt tasks
-  require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt)
 
-  var reloadPort = 35729, files;
+  var reloadPort = 35729, files
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -61,15 +61,15 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.config.requires('watch.server.files');
-  files = grunt.config('watch.server.files');
-  files = grunt.file.expand(files);
+  grunt.config.requires('watch.server.files')
+  files = grunt.config('watch.server.files')
+  files = grunt.file.expand(files)
 
   grunt.registerTask('delayed-livereload', 'Live reload after the node server has restarted.', function () {
-    var done = this.async();
+    var done = this.async()
     setTimeout(function () {
       request.get('http://localhost:' + reloadPort + '/changed?files=' + files.join(','),  function (err, res) {
-          var reloaded = !err && res.statusCode === 200;
+          var reloaded = !err && res.statusCode === 200
           if (reloaded) {
             grunt.log.ok('Delayed live reload successful.');
           } else {
@@ -77,8 +77,8 @@ module.exports = function (grunt) {
           }
           done(reloaded);
         });
-    }, 500);
-  });
+    }, 500)
+  })
 
   grunt.registerTask('default', [
     'less',
