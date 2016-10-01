@@ -5,6 +5,7 @@ var crypto = require('crypto')
 var algorithm = 'aes-256-ctr'
 var password = 'solarstone'
 
+
 function encrypt (text) {
   var cipher = crypto.createCipher(algorithm, password)
   var crypted = cipher.update(text, 'utf8', 'hex')
