@@ -4,16 +4,18 @@ var favicon = require('serve-favicon')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var session = require('express-session')
 
 var routes = require('./routes/index')
 var users = require('./routes/user')
+var getticket = require('./routes/ticket')
+var registration = require('./routes/registration')
 
 var app = express()
 
 var env = process.env.NODE_ENV || 'development'
 app.locals.ENV = env
 app.locals.ENV_DEVELOPMENT = env == 'development'
-
 
   // view engine setup
 
@@ -28,10 +30,12 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
 
 app.use('/', routes)
 app.use('/users', users)
-
+app.use('/getticket', getticket)
+app.use('/registration', registration)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found')

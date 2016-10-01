@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  div.container
+    div.title This is your ticket
+    div#qrcode
+    a.back(href="/users") Go to registration
+  script(type="text/javascript").
+    var qrcode = new QRCode("qrcode");
+    var value = '#{cryptedQRString}'
+    if(value){
+      qrcode.makeCode(value)
+    }
+    else{
+      $('.title').hide();
+      $('#qrcode').html('Error! Please try again')
+      $('.back').show()
+    }

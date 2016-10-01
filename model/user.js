@@ -14,14 +14,15 @@ db.once('open', function () {
   console.log('connected to the databasesss')
 
   console.log(global.db)
-
 })
 
-//create schema for blog post
+// create schema for blog post
 
 var userSchema = new mongoose.Schema({
-  name: String
+  firstName: String,
+  lastName: String,
+  email: String
 })
 
-//compile schema to model
+// compile schema to model
 module.exports = db.model('user', userSchema)
