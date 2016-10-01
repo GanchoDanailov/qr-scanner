@@ -3,7 +3,7 @@ var router = express.Router()
 var User = require('../model/user')
 var crypto = require('crypto')
 var algorithm = 'aes-256-ctr'
-var password = 'd6F3Efeq'
+var password = 'solarstone'
 
 function encrypt (text) {
   var cipher = crypto.createCipher(algorithm, password)

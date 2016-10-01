@@ -5,7 +5,7 @@ block content
   div.container
     div.title This is your ticket
     div#qrcode
-    a.back(href="/users") Go to registration
+    a.back(href="/registration") Go to registration
   script(type="text/javascript").
     var qrcode = new QRCode("qrcode");
     var value = '#{cryptedQRString}'

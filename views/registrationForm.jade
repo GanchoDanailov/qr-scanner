@@ -11,10 +11,14 @@ block content
         span  ticket
       form.form-container(name="add-estimation", method="post", action="/users")
           label First Name
-          input(type="text", name="firstName")
+          input(type="text", name="firstName", data-validation="required")
           label Last Name
-          input(type="text", name="lastName")
+          input(type="text", name="lastName",data-validation="required")
           label Email
-          input(type="text", name="email")
+          input(type="text", name="email", data-validation="email")
           div.actions
               input(type="submit", value="Get Ticket")
+    script(type="text/javascript").
+      $.validate({
+       modules : 'html5'
+      });
