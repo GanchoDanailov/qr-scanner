@@ -4,7 +4,7 @@ var router = express.Router()
 /* GET home page. */
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' })
+  res.render('index', { title: 'Tranc3motion' })
 })
 
 module.exports = router
