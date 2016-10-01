@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url('http://dgty-promo.com/wp-content/uploads/2013/10/Dennis-Seperd-25-May-20131.jpg');
 }
@@ -8,7 +8,7 @@ a {
 }
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #fff;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.3);
   max-width: 400px;
@@ -45,6 +45,8 @@ a {
 .form-container .title .brand {
   text-transform: uppercase;
   font-size: 25px;
+  display: inline-block;
+  padding: 0 11px;
 }
 .form-container .title .brand .revert {
   font-size: 50px;
