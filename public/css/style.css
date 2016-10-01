@@ -81,27 +81,46 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  margin-bottom: 40px;
-}
-li {
-  float: left;
-}
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-li a:hover:not(.active) {
-  background-color: #4CAF50;
-}
 .active {
   background-color: #4CAF50;
+}
+.all-users-container {
+  padding: 50px 100px;
+  font-family: sans-serif;
+  font-size: 2em;
+  color: #333;
+  background: #f7f7f7;
+}
+.all-users-container li,
+.all-users-container ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.all-users-container ul {
+  margin: 2em 0;
+}
+.all-users-container li {
+  margin: 1em 1em 1em 3em;
+}
+.all-users-container li:before {
+  content: '';
+  float: left;
+  margin-left: -1.5em;
+  border: 3px solid #0074D9;
+  height: 20px;
+  width: 20px;
+}
+.all-users-container li.entered:before {
+  background: #0074D9;
+}
+.all-users-container .link {
+  font-size: 0.45em;
+}
+.reader-container #reader {
+  widows: 300px;
+  height: 300px;
+}
+.reader-container video {
+  height: 300px;
 }

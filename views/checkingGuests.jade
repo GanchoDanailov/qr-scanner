@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div.reader-container
+    div#reader
+  script(type="text/javascript").
+    $('#reader').html5_qrcode(function(data){
+      alert('kored')
+    },
+    function(error){
+
+     }, function(videoError){
+          
+     });

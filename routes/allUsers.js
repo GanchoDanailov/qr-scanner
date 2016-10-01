@@ -6,7 +6,10 @@ var User = require('../model/user')
 router.get('/', function (req, res) {
   User.find({}, function (err, users) {
     if (err) throw err
-    res.render('allUsers', { title: users[0].email })
+    console.log('obekt' + users)
+    console.log('sled kato e prevurnat v string' + JSON.stringify(users))
+    var str = JSON.stringify(users)
+    res.render('allUsers', { allUsers: str })
   })
 })
 

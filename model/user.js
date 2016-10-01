@@ -21,6 +21,10 @@ db.once('open', function () {
 var userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
+  isEntered: {
+    type: Boolean,
+    default: false
+  },
   email: String
 })
 
