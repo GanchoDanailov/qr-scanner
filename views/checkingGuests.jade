@@ -5,10 +5,14 @@ block content
     div#reader
   script(type="text/javascript").
     $('#reader').html5_qrcode(function(data){
-      alert('kored')
+      $.post( "/checkingGuests", { str: data }).done(function(data) {
+        console.log( "second success: "+ data.redirect )
+        window.location.replace(data.redirect);
+      });
+
     },
     function(error){
-
-     }, function(videoError){
-          
-     });
+      console.log(error)
+    }, function(videoError){
+      console.log(videoError)
+    });
