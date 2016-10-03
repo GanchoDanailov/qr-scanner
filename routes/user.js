@@ -21,20 +21,20 @@ function decrypt (text) {
 }
 
 // TODO its seems we dont need it
-
-var initUser = new User({
-  firstName: 'Gancho',
-  lastName: 'Danailov',
-  email: 'test-email@abv.bg'
-})
-
-initUser.save(function (err) {
-  if (err) {
-    return err
-  } else {
-    console.log(initUser)
-  }
-})
+// 
+// var initUser = new User({
+//   firstName: 'Gancho',
+//   lastName: 'Danailov',
+//   email: 'test-email@abv.bg'
+// })
+//
+// initUser.save(function (err) {
+//   if (err) {
+//     return err
+//   } else {
+//     console.log(initUser)
+//   }
+// })
 
 /* GET users listing. */
 router.post('/', function (req, res) {
