@@ -5,7 +5,6 @@ var crypto = require('crypto')
 var algorithm = 'aes-256-ctr'
 var password = 'solarstone'
 
-
 function encrypt (text) {
   var cipher = crypto.createCipher(algorithm, password)
   var crypted = cipher.update(text, 'utf8', 'hex')
@@ -19,22 +18,6 @@ function decrypt (text) {
   var obj = JSON.parse(dec)
   return obj
 }
-
-// TODO its seems we dont need it
-// 
-// var initUser = new User({
-//   firstName: 'Gancho',
-//   lastName: 'Danailov',
-//   email: 'test-email@abv.bg'
-// })
-//
-// initUser.save(function (err) {
-//   if (err) {
-//     return err
-//   } else {
-//     console.log(initUser)
-//   }
-// })
 
 /* GET users listing. */
 router.post('/', function (req, res) {
@@ -63,6 +46,10 @@ router.post('/', function (req, res) {
         }
       })
     } else {
+      // TODO
+      // fix redirecting - change post action form from jquery ajax
+      req.session.userExist = user[0]
+      res.send('User whit this email already exist: ' + user[0].email)
       console.log('There is such user!' + user[0])
       res.end()
     }
