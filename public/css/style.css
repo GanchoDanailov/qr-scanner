@@ -24,6 +24,11 @@ a {
   display: none;
   padding-top: 30px;
 }
+.container .hint {
+  margin-top: 150px;
+  font: 20px;
+  color: green;
+}
 .container img {
   margin: 0 auto;
 }

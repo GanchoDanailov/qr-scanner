@@ -6,6 +6,7 @@ block content
     div.title This is your ticket
     div#qrcode
     a.back(href="/registration") Go to registration
+    p.hint Take a screenshot or print this code and bring it to the party. Thats all :)
   script(type="text/javascript").
     var qrcode = new QRCode("qrcode");
     var value = '#{cryptedQRString}'
@@ -14,6 +15,7 @@ block content
     }
     else{
       $('.title').hide();
+      $('.hint').hide();
       $('#qrcode').html('Error! Please try again')
       $('.back').show()
     }
