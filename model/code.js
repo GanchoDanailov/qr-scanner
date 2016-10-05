@@ -4,19 +4,15 @@
 var mongoose = require('mongoose')
 var db = mongoose.connection
 
-// create schema for blog post
+// create schema for code
 
-var userSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  invited: String,
+var code = new mongoose.Schema({
   code: Number,
-  isEntered: {
+  isUsed: {
     type: Boolean,
     default: false
-  },
-  email: String
+  }
 })
 
 // compile schema to model
-module.exports = db.model('user', userSchema)
+module.exports = db.model('code', code)

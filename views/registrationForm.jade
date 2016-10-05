@@ -16,10 +16,16 @@ block content
           input(type="text", name="lastName",data-validation="required")
           label Invited by
           input(type="text", name="invited",data-validation="required")
+          label Registration Code
+          input(type="text", name="code",data-validation="required")
+          if code
+            p.error #{code}.
           label Email
           input(type="text", name="email", data-validation="email")
           div.actions
               input(type="submit", value="Get Ticket")
+
+
     script(type="text/javascript").
       $.validate({
        modules : 'html5'

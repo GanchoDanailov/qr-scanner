@@ -4,6 +4,17 @@ var app = require('../app')
 var mongoose = require('mongoose')
 app.set('port', process.env.PORT || 3000)
 
+mongoose.connect('mongodb://gancho:Pragmatron@ds023074.mlab.com:23074/qr-scanner')
+
+var db = mongoose.connection
+
+db.on('error', console.error.bind(console, 'connection error:'))
+
+db.once('open', function () {
+  global.db = mongoose.connection
+  console.log('connected to the databasesss')
+})
+
 console.log('starting server...')
 
 var server = app.listen(app.get('port'), function () {

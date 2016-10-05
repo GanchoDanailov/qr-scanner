@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div.image-container
+      img(src="http://dgty-promo.com/wp-content/uploads/2013/10/Logo_Tranc3motion_site.png")
+    div.form-container
+      .title Enter to Admin
+      form.form-container(name="add-estimation", method="post", action="/allCodes")
+          label Password
+          input(type="text", name="password", data-validation="required")
+          div.actions
+              input(type="submit", value="Log in")

@@ -60,6 +60,9 @@ a {
   -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
 }
+.form-container .error {
+  color: red;
+}
 .form-container form {
   text-align: left;
 }

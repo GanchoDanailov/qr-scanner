@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .all-users-container
+    ul.all-users
+  script(type="text/javascript").
+    var value = '#{allCodes}'
+    var obj = jQuery.parseJSON( value.replace(/&quot;/g,'\"') );
+    var rend = '';
+    $.each( obj, function( key, value ) {
+      var newUser
+      if(value.isUsed){
+         newUser = '<li class="entered">'+ value.code + '</li>'
+      }else{
+         newUser = '<li>'+ value.code + '</li>'
+      }
+      rend = rend + newUser;
+    });
+    $( ".all-users" ).append( rend );
