@@ -38,7 +38,6 @@ router.post('/', function (req, res) {
             'email': newUser.email
           }
           var hw = encrypt(JSON.stringify(cryptString))
-          console.log('kriptirano: ' + hw)
           console.log('dekriptirano: ' + decrypt(hw).firstName)
           req.session.cryptString = hw
           res.redirect('/getticket')
