@@ -10,9 +10,9 @@ block content
     $.each( obj, function( key, value ) {
       var newUser
       if(value.isEntered){
-         newUser = '<li class="entered">'+ value.firstName + ' ' + value.lastName + '</br> ' + value.email + '</br> Invited by: ' + value.invited + '</li>'
+         newUser = '<li class="entered">'+ value.firstName + ' ' + value.lastName + '</br> Invited by: ' + value.invited + '</li>'
       }else{
-         newUser = '<li>'+ value.firstName + ' ' + value.lastName + '</br> ' + value.email + '</br> Invited by: ' + value.invited + '</li>'
+         newUser = '<li>'+ value.firstName + ' ' + value.lastName + '</br> Invited by: ' + value.invited + '</li>'
       }
 
       rend = rend + newUser;
