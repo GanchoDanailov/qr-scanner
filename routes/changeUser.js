@@ -11,17 +11,17 @@ router.get('/:id', function (req, res) {
     var lastName = user.lastName || 'Last name'
     var email = user.email || 'Email'
     var isEntered = obj.isEntered
+    req.session.user = obj
     User.update({_id: id}, {
       isEntered: !isEntered
     },function (err, numberAffected, rawResponse) {
       console.log('User found and updated')
+      if(isEntered){
+        res.redirect('/allUsers')
+      }else{
+        res.redirect('/welcomeUser')
+      }
     })
-    if(isEntered){
-      res.redirect('/allUsers')
-    }else{
-      res.render('welcomeUser', {user: {firstName: firstName, lastName: lastName, email: email }})
-    }
-
   })
 })
 
