@@ -1,8 +1,9 @@
 extends layout
 
 block content
-  .all-users-container
-    ul.all-users
+  .all-users-container#users
+    input.search(type="text" placeholder="Search")
+    ul.all-users.list
   script(type="text/javascript").
     var value = '#{allUsers}'
     var obj = jQuery.parseJSON( value.replace(/&quot;/g,'\"') );
@@ -10,11 +11,16 @@ block content
     $.each( obj, function( key, value ) {
       var newUser
       if(value.isEntered){
-         newUser = '<li class="entered">'+ value.firstName + ' ' + value.lastName + '</br> Invited by: ' + value.invited + '</li>'
+         newUser = '<li class="entered"><a href="/changeuser/' +value._id + '"></a><h5 class="name">'+ value.firstName + ' ' + value.lastName + '</h5>Invited by: ' + value.invited + '</li>'
       }else{
-         newUser = '<li>'+ value.firstName + ' ' + value.lastName + '</br> Invited by: ' + value.invited + '</li>'
+         newUser = '<li><a href="/changeuser/' +value._id + '"></a><h5 class="name">'+ value.firstName + ' ' + value.lastName + '</h5> Invited by: ' + value.invited + '</li>'
       }
 
       rend = rend + newUser;
     });
     $( ".all-users" ).append( rend );
+    var options = {
+      valueNames: [ 'name' ]
+    };
+
+    var userList = new List('users', options);

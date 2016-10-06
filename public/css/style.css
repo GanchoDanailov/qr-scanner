@@ -6,6 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+h5 {
+  margin: 0;
+}
 .container {
   border-radius: 5px;
   background-color: #fff;
@@ -111,7 +114,7 @@ input[type=submit]:hover {
 .all-users-container li {
   margin: 1em 1em 1em 3em;
 }
-.all-users-container li:before {
+.all-users-container li a:before {
   content: '';
   float: left;
   margin-left: -1.5em;
@@ -119,7 +122,7 @@ input[type=submit]:hover {
   height: 20px;
   width: 20px;
 }
-.all-users-container li.entered:before {
+.all-users-container li.entered a:before {
   background: #0074D9;
 }
 .all-users-container .link {
