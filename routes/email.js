@@ -58,11 +58,6 @@ function sendTicket (cryptedString, user) {
       console.log(res)
     })
   })
-
-  pdf.create(htmlTicket, optionsPDF).toFile('./ticket.pdf', function (err, res) {
-    if (err) return console.log(err)
-    console.log(res)
-  })
 }
 
 // sendTicket('skjdhaskjlgdelrg32k5g23krbfdsfds98fysd906928374302u4rhwefkjsdhfsdfsdfs90dufsdufosd')
