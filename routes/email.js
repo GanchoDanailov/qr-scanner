@@ -1,9 +1,10 @@
 var express = require('express')
+var fs = require('fs')
 var router = express.Router()
 var nodemailer = require('nodemailer')
 var sgTransport = require('nodemailer-sendgrid-transport')
 var pdf = require('html-pdf')
-const QRious = require('qrious')
+var qr = require('qr-image')
 
 var options = {
   auth: {
@@ -17,7 +18,8 @@ let optionsPDF = {
   'orientation': 'portrait'
 }
 function sendTicket (cryptedString, user) {
-  const qr = new QRious({ value: cryptedString, size: 150 })
+  var qr_svg = qr.imageSync(cryptedString, { type: 'svg' })
+  console.log('svgobj:' + qr_svg)
   let date = 'November 5, 2016'
   let artistName = 'Ariwave'
   let clubName = 'Fabrika 126'
@@ -34,7 +36,7 @@ function sendTicket (cryptedString, user) {
                       '<h3>Tranc3motion pres. ' + artistName + '</h3>' +
                       '<p>Name: ' + name + '<br> <br> Date: ' + date + '</p>' +
                       '<p><b>' + clubName + '</b><br>' + address + '</p>' +
-                      '</div><div style="float:right; padding-right:20px; with:35%;"><p><img src="' + qr.toDataURL() + '" /></p></div></div>' +
+                      '</div><div style="max-width: 30%; height:180px; width:100%; float:right;">' + qr_svg + '</div></div>' +
                       '</body></html>'
 
   pdf.create(htmlTicket, optionsPDF).toBuffer(function (err, buffer) {
@@ -58,6 +60,9 @@ function sendTicket (cryptedString, user) {
       console.log(res)
     })
   })
+  // pdf.create(htmlTicket,optionsPDF).toStream(function(err, stream){
+  //   stream.pipe(fs.createWriteStream('./foo.pdf'))
+  // })
 }
 
 // sendTicket('skjdhaskjlgdelrg32k5g23krbfdsfds98fysd906928374302u4rhwefkjsdhfsdfsdfs90dufsdufosd')
