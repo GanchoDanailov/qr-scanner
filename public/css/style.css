@@ -132,6 +132,9 @@ input[type=submit]:hover {
   font-size: 18px;
   margin: 0;
 }
+.all-users-container .entered {
+  text-decoration: line-through;
+}
 .reader-container #reader {
   widows: 300px;
   height: 300px;

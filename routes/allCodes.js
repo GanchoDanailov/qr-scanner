@@ -9,9 +9,9 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   var pass = req.body.password
   if (pass === 'Solarstone1234') {
-    Code.find({}, function (err, code) {
-      if (err) throw err
-      //var str = JSON.stringify(users)
+    Code.find({}).sort({ isUsed: 1 }).exec((err, code) => {
+      if (err) res.send(err)
+      // var str = JSON.stringify(users)
       console.log(code)
       var str = JSON.stringify(code)
       res.render('allCodes', { allCodes: str })

@@ -16,6 +16,7 @@ var enteredUsers = require('./routes/enteredUsers')
 var welcomeUser = require('./routes/welcomeUser')
 var allCodes = require('./routes/allCodes')
 var changeUser = require('./routes/changeUser')
+var email = require('./routes/email')
 
 var app = express()
 
@@ -48,6 +49,8 @@ app.use('/enteredUsers', enteredUsers)
 app.use('/welcomeUser', welcomeUser)
 app.use('/allCodes', allCodes)
 app.use('/changeUser', changeUser)
+app.use('/email', email)
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found')

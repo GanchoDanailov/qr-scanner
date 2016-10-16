@@ -24,7 +24,8 @@ router.post('/', function (req, res) {
   var email = obj.email
   User.update({email: email}, {
     isEntered: 'true'
-  },function (err, numberAffected, rawResponse) {
+  }, function (err, numberAffected, rawResponse) {
+    if (err) console.log(err)
     console.log('User found and updated')
   })
   res.send({redirect: '/welcomeUser'})
