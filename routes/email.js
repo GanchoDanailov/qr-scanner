@@ -13,24 +13,24 @@ var options = {
 }
 
 var mailer = nodemailer.createTransport(sgTransport(options))
-let optionsPDF = {
+var optionsPDF = {
   'format': 'A4',
   'orientation': 'portrait'
 }
 function sendTicket (cryptedString, user) {
   var qr_svg = qr.imageSync(cryptedString, { type: 'svg' })
   console.log('svgobj:' + qr_svg)
-  let date = 'November 5, 2016'
-  let artistName = 'Ariwave'
-  let clubName = 'Fabrika 126'
-  let guestEmail = user.email
-  let name = user.firstName + ' ' + user.lastName
-  let address = 'Sofia, bul. Maria Luiza 126'
-  let emailContent = '<b>Здравей </b>' + name + '<br><p> Благодарим ти за интереса към нашето събитие.' +
+  var date = 'November 5, 2016'
+  var artistName = 'Ariwave'
+  var clubName = 'Fabrika 126'
+  var guestEmail = user.email
+  var name = user.firstName + ' ' + user.lastName
+  var address = 'Sofia, bul. Maria Luiza 126'
+  var emailContent = '<b>Здравей </b>' + name + '<br><p> Благодарим ти за интереса към нашето събитие.' +
                         'Като прикачен файл ще откриеш билет като комплимент от нас.<br> Надяваме се да ти хареса!</p>' +
                         '<p>Научи повече за нас и как осъществяваме събитията си <a href="http://dgty-promo.com/faq/"> тук </a>.</p>' +
                         '<p>Екипа на Tranc3motion.</p>'
-  let htmlTicket = '<html><head><meta charset="utf8"></head><body style="">' +
+  var htmlTicket = '<html><head><meta charset="utf8"></head><body style="">' +
                       '<div style="overflow: hidden; font-family: Arial, Helvetica, sans-serif; border-bottom-style: dashed;">' +
                       '<div style="float:left; width:65%; padding: 0 0 0 20px;">' +
                       '<h3>Tranc3motion pres. ' + artistName + '</h3>' +
