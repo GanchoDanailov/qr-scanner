@@ -8,7 +8,7 @@ var qr = require('qr-image')
 
 var options = {
   auth: {
-    api_key: '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'
+    api_key: process.env.sendGridKey
   }
 }
 
