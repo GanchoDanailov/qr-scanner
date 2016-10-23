@@ -21,7 +21,7 @@ function sendTicket (cryptedString, user) {
   var qr_svg = qr.imageSync(cryptedString, { type: 'svg' })
   console.log('svgobj:' + qr_svg)
   var date = 'November 5, 2016'
-  var artistName = 'Ariwave'
+  var artistName = 'Airwave'
   var clubName = 'Fabrika 126'
   var guestEmail = user.email
   var name = user.firstName + ' ' + user.lastName
