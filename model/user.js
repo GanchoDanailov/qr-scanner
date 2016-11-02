@@ -10,7 +10,7 @@ var userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   invited: String,
-  code: Number,
+  code: String,
   isEntered: {
     type: Boolean,
     default: false

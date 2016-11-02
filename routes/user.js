@@ -71,11 +71,15 @@ router.post('/', function (req, res) {
           var newUser = new User(req.body)
           newUser.save(function (err) {
             if (err) throw err
-            Code.update({code: req.body.code}, {
-              isUsed: 'true'
-            }, function (err, numberAffected, rawResponse) {
-              if (err) throw err
-            })
+            console.log(code[0].code)
+
+            if (code[0].code !== 'Playtech') {
+              Code.update({code: req.body.code}, {
+                isUsed: 'true'
+              }, function (err, numberAffected, rawResponse) {
+                if (err) throw err
+              })
+            }
 
             email(createCryptedObj(req, newUser), newUser)
             res.redirect('/users/successRegistration')

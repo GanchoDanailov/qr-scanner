@@ -7,7 +7,7 @@ var db = mongoose.connection
 // create schema for code
 
 var code = new mongoose.Schema({
-  code: Number,
+  code: String,
   isUsed: {
     type: Boolean,
     default: false
