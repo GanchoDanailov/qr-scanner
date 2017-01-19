@@ -17,8 +17,9 @@ var welcomeUser = require('./routes/welcomeUser')
 var allCodes = require('./routes/allCodes')
 var changeUser = require('./routes/changeUser')
 var email = require('./routes/email')
-
 var app = express()
+
+require('dotenv').config()
 
 var env = process.env.NODE_ENV || 'development'
 app.locals.ENV = env

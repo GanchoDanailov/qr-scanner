@@ -5,7 +5,9 @@ var nodemailer = require('nodemailer')
 var sgTransport = require('nodemailer-sendgrid-transport')
 var pdf = require('html-pdf')
 var qr = require('qr-image')
+require('dotenv').config()
 
+console.log('kor: '+ process.env.sendGridKey)
 var options = {
   auth: {
     api_key: process.env.sendGridKey
