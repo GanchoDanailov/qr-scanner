@@ -48,8 +48,8 @@ function createCryptedObj (req, obj) {
 //     })
 //   }
 // }
-// generate random umbers
-// createRandomCode(100, 5)
+// //generate random umbers
+// createRandomCode(99, 6)
 
 /* GET users listing. */
 router.post('/', function (req, res) {
@@ -61,7 +61,6 @@ router.post('/', function (req, res) {
       code: req.body.code
     }, function (err, code) {
       if (err) throw err
-      console.log(code)
       if (code[0] === undefined) {
         res.render('registrationForm', { code: 'Invalid code' })
       } else if (code[0].isUsed) {

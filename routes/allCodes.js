@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
 })
 router.post('/', function (req, res) {
   var pass = req.body.password
-  if (pass === 'Solarstone1234') {
+  if (pass === 'Orkidea2017') {
     Code.find({}).sort({ isUsed: 1 }).exec((err, code) => {
       if (err) res.send(err)
       // var str = JSON.stringify(users)
