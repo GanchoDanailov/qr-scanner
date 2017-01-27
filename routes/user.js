@@ -72,7 +72,7 @@ router.post('/', function (req, res) {
             if (err) throw err
             console.log(code[0].code)
 
-            if (code[0].code !== 'Playtech') {
+            if (code[0].code !== 'IBM2017') {
               Code.update({code: req.body.code}, {
                 isUsed: 'true'
               }, function (err, numberAffected, rawResponse) {
