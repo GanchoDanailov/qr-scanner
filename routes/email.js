@@ -22,8 +22,8 @@ var optionsPDF = {
 function sendTicket (cryptedString, user) {
   var qr_svg = qr.imageSync(cryptedString, { type: 'svg' })
   console.log('svgobj:' + qr_svg)
-  var date = 'March 31, 2017'
-  var artistName = 'Ørjan Nilsen'
+  var date = 'May 20, 2017'
+  var artistName = 'RAM (Extended Set)'
   var clubName = 'Fabrika 126'
   var guestEmail = user.email
   var name = user.firstName + ' ' + user.lastName
