@@ -22,8 +22,8 @@ var optionsPDF = {
 function sendTicket (cryptedString, user) {
   var qr_svg = qr.imageSync(cryptedString, { type: 'svg' })
   console.log('svgobj:' + qr_svg)
-  var date = 'Sep 29, 2017'
-  var artistName = 'Nifra & Basil O\'Glue'
+  var date = 'Oct 27, 2017'
+  var artistName = 'Will Atkinson - Halloween Special'
   var clubName = 'Fabrika 126'
   var guestEmail = user.email
   var name = user.firstName + ' ' + user.lastName
