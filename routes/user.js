@@ -7,20 +7,22 @@ var crypto = require('crypto')
 var algorithm = 'aes-256-ctr'
 var password = 'solarstone'
 
-function encrypt (text) {
+function encrypt(text) {
   var cipher = crypto.createCipher(algorithm, password)
   var crypted = cipher.update(text, 'utf8', 'hex')
   crypted += cipher.final('hex')
   return crypted
 }
-function decrypt (text) {
+
+function decrypt(text) {
   var decipher = crypto.createDecipher(algorithm, password)
   var dec = decipher.update(text, 'hex', 'utf8')
   dec += decipher.final('utf8')
   var obj = JSON.parse(dec)
   return obj
 }
-function createCryptedObj (req, obj) {
+
+function createCryptedObj(req, obj) {
   var cryptString = {
     'firstName': obj.firstName,
     'lastName': obj.lastName,
@@ -62,20 +64,26 @@ router.post('/', function (req, res) {
     }, function (err, code) {
       if (err) throw err
       if (code[0] === undefined) {
-        res.render('registrationForm', { code: 'Invalid code' })
+        res.render('registrationForm', {
+          code: 'Invalid code'
+        })
       } else if (code[0].isUsed) {
-        res.render('registrationForm', {code: 'this code is already used'})
+        res.render('registrationForm', {
+          code: 'this code is already used'
+        })
       } else {
         if (user[0] === undefined) {
           var newUser = new User(req.body)
           newUser.save(function (err) {
             if (err) throw err
             console.log(code[0].code)
+            if (code[0].code !== 'IBM2017' &&
+              code[0].code !== 'GoDaddy' &&
+              code[0].code !== 'Tranc3motionCrew') {
 
-            if (code[0].code !== 'IBM2017' 
-                && code[0].code !== 'GoDaddy'
-                && code[0].code !== 'Tranc3motionCrew') {
-              Code.update({code: req.body.code}, {
+              Code.update({
+                code: req.body.code
+              }, {
                 isUsed: 'true'
               }, function (err, numberAffected, rawResponse) {
                 if (err) throw err
@@ -98,7 +106,11 @@ router.post('/', function (req, res) {
 router.get('/userExist', function (req, res) {
   var user = req.session.userExist || 'empty'
   var email = user.email || 'Email'
-  res.render('userExist', {user: {email: email}})
+  res.render('userExist', {
+    user: {
+      email: email
+    }
+  })
 })
 
 router.get('/successRegistration', function (req, res) {
